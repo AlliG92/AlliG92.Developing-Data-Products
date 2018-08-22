@@ -1,0 +1,38 @@
+---
+title: 'Course Project : Shiny Application and Reproducible Pitch'
+author: "A.Gray"
+date: "August 21, 2018"
+output: ioslides_presentation
+---
+
+## Overview
+
+- First, I will create a Shiny application and deploy it on Rstudio's servers. 
+- Second, I will use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about my application.
+
+## Intro
+This presentation is part of the Developing Data Products course project submission.
+
+The Shiny application pitched by this presentation is at http://dsci1.shinyapps.io/shiny-ddp.
+
+The Shiny app source code is available at https://github.com/dsci1/cousera-ddp.
+
+## Shiny Application
+
+- The objective of this application is to simulate a GPA calculation
+- Many of my peers frequently came to me to figure out what their minimum grades would be needed to maintain athletic and academic eligibility
+- Note: This will calculate a semester GPA not cumulative
+
+
+## R Switch Function
+The app uses the below function to calculate GPA per course:
+```{r}
+letter_to_gpa_score <- function(letter) {
+  switch(letter,
+         "A" = 4,"A-" = 3.67,"B+" = 3.33,
+         "B" = 3,"B-" = 2.67, "C+" = 2.33,
+         "C" = 2,"C-" = 1.67, "D+" = 1.33,
+         "D" = 1,"D-" = 0.66, "F" = 0)
+}
+letter_to_gpa_score("B-")
+```
